@@ -10,7 +10,7 @@ const MainNavbar = () => {
   <Container>
        <Navbar.Brand>
               
-              <img width="200" className="mx-5" src="https://i.ibb.co/cCw9yY8/logo.png" alt="" />    </Navbar.Brand>
+             <Link to="/"> <img width="200" className="mx-5" src="https://i.ibb.co/cCw9yY8/logo.png" alt="" /></Link>    </Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
@@ -18,7 +18,7 @@ const MainNavbar = () => {
       </Nav.Link>
               <Nav.Link className="fw-bold" as={Link} to="/about">About Us </Nav.Link>
               
-        <Nav.Link className="fw-bold" href="/doctors">Doctors </Nav.Link>
+        <Nav.Link className="fw-bold" as={Link} to="/doctors">Doctors </Nav.Link>
         <Nav.Link className="fw-bold" as={Link} to="/departments">Departments </Nav.Link>
         <Nav.Link className="fw-bold" as={Link} to="/contact"> Contact Us </Nav.Link >
         

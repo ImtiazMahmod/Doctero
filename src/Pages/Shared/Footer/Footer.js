@@ -2,6 +2,7 @@ import { faHeadphones,faMapMarkedAlt,  faPhoneAlt } from '@fortawesome/free-soli
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './footer.css'
 
 const Footer = () => {
@@ -10,7 +11,9 @@ const Footer = () => {
             <Container>
                 <Row className="g-4">
                     <Col>
-                    <img width="200" src="https://i.ibb.co/YXxFB1N/footer.png" alt="" />
+                        <Link to="/">
+                        <img width="200" src="https://i.ibb.co/YXxFB1N/footer.png" alt="" />
+                    </Link>
                     </Col>
                 <Col>
                     <div  className="d-flex justify-content-center align-items-center"> <FontAwesomeIcon

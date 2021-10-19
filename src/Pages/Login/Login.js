@@ -1,4 +1,4 @@
-import { faFacebookF, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import {  faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
@@ -8,11 +8,13 @@ import useAuth from '../Hooks/useAuth';
 
 
 const Login = () => {
-    const {setError,setUser,setIsLoading, googleSignIn,error,login,setEmail,setPassword } = useAuth()
+    const {setError,setUser,setIsLoading, googleSignIn,error,login,setEmail,setPassword,githubSignIn } = useAuth()
     ///user desired destination path
     const location = useLocation();
     const redirectUri = location.state?.from || '/home'
     const history = useHistory()
+
+    ///google sign in
     const handleGoogle = () => {
         googleSignIn()
         .then((result) => {
@@ -24,7 +26,20 @@ const Login = () => {
    const handleEmail = (e) => {
     setEmail(e.target.value)
    
-}
+    }
+    ///github sign in
+    const handleGithub = () => {
+        githubSignIn()
+        .then((result) => {
+            setUser(result.user)
+            history.push(redirectUri)
+        })
+            .catch(error =>
+                setError(error.message)
+                )
+            .finally(setIsLoading(false))
+            ;
+    }
 const handlePassword = (e) => {
     setPassword(e.target.value)
     }
@@ -65,8 +80,8 @@ const handlePassword = (e) => {
                         <div className="py-3">
                             <p className="border-bottom pb-3 mx-5 border-info">Alternative Login Options</p>
                             <Button onClick={handleGoogle}  className="m-3 w-75" variant="outline-info"> <FontAwesomeIcon icon={ faGoogle } /> Login With Google</Button>
-                            <Button className=" m-3 w-75" variant="outline-info">
-                            <FontAwesomeIcon icon={ faFacebookF } /> Login With Facebook</Button>
+                            <Button onClick={handleGithub} className=" m-3 w-75" variant="outline-info">
+                            <FontAwesomeIcon  icon={ faGithub} /> Login With Github</Button>
                         </div>
                         <div className="mt-3">
                             <p>Don't have an Account.  <Link to="/register" className="text-info fw-bold">SignUp</Link> </p>
