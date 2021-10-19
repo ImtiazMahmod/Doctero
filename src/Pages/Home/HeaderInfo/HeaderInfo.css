@@ -1,0 +1,16 @@
+  .info:hover{
+    background-color: #cfeaf760;
+    
+  }
+  .infoIcon{
+    color:#2ca4d3;
+    margin: 20px auto;
+    font-size: 3rem;
+    display: block;
+    width: 100%;
+   
+  }
+  .infoIcon:hover{
+    color: antiquewhite;
+  }
+  

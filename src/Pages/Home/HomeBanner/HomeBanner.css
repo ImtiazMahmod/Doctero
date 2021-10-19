@@ -1,0 +1,25 @@
+.banner{
+    display: inline-block;
+    position: relative;
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.banner img{
+    width: auto;
+    height: 100%;
+    margin-left: -680px;
+    display: block;
+}
+.bannertitle{
+    font-size: 3rem;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(0, 65, 90);
+}
+.bannersub{
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+    
+}
+
