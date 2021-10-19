@@ -1,7 +1,6 @@
 import  { useEffect, useState } from 'react';
 import initializeAuth from '../Login/Firebase/firebase.init'
 import { getAuth, signInWithPopup,createUserWithEmailAndPassword,signInWithEmailAndPassword, GoogleAuthProvider,onAuthStateChanged,sendEmailVerification, updateProfile ,signOut } from "firebase/auth";
-import { useHistory } from 'react-router';
 
 initializeAuth();
 
@@ -45,7 +44,8 @@ const useFirebase = () => {
   });
     }
     ///sign in with email and password
-    const login = () => {
+  const login = () => {
+    setIsLoading(true);
       return  signInWithEmailAndPassword(auth, email, password)
       
    }

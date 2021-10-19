@@ -18,7 +18,7 @@ const MainNavbar = () => {
       </Nav.Link>
               <Nav.Link className="fw-bold" as={Link} to="/about">About Us </Nav.Link>
               
-        <Nav.Link className="fw-bold" href="/home#doctors">Doctors </Nav.Link>
+        <Nav.Link className="fw-bold" href="/doctors">Doctors </Nav.Link>
         <Nav.Link className="fw-bold" as={Link} to="/departments">Departments </Nav.Link>
         <Nav.Link className="fw-bold" as={Link} to="/contact"> Contact Us </Nav.Link >
         

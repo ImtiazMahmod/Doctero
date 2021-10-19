@@ -5,7 +5,6 @@ import Department from '../Department/Department';
 
 const Departments = () => {
     const [departments] = useDepartment()
-    console.log(departments)
     return (
         <Container className="my-5">
             <Row xs={1} md={2} lg={4} className="g-4">

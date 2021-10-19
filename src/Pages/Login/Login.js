@@ -41,7 +41,7 @@ const handlePassword = (e) => {
         .catch((error) => {
             const errorMessage = error.message;
             setError(errorMessage)
-        });
+        }).finally(setIsLoading(false));
     }
     const inputStyle="p-3 m-3 outline-none rounded border-0 shadow"
     return (

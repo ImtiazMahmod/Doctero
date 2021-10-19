@@ -17,9 +17,9 @@ const Emergency = () => {
                 <p>In Emergency case, we always beside of you.We are always try to help in any condition.NO PANIC.</p>
                 <Button variant="info" className="my-4 w-100">Contact US</Button>
             </div>
-            <dib>
+            <div>
                 <Button variant="info" className="my-3 w-100">Our company details</Button>
-            </dib>
+            </div>
         </div>
     );
 };
