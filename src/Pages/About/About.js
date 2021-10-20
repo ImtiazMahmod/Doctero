@@ -13,8 +13,8 @@ const About = () => {
             </Banner>
             <Container className="my-5">
             <Row>
-                    <Col sm={12} md={6} lg={6}>
-                        <img className="mt-3" width="300" src="https://i.ibb.co/NVnJVWj/doctor-14044.png" alt="" />
+                    <Col className="d-flex justify-content-center align-items-center" sm={12} md={6} lg={6}>
+                        <img  width="300" src="https://i.ibb.co/NVnJVWj/doctor-14044.png" alt="" />
                     </Col>
                     <Col sm={12} md={6} lg={6} className="text-start mt-3">
                         <p className="text-secondary">Visit Our Hospitals</p>

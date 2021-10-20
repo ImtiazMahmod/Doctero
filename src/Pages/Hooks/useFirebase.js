@@ -1,11 +1,8 @@
 import  { useEffect, useState } from 'react';
 import initializeAuth from '../Login/Firebase/firebase.init'
 import { getAuth, signInWithPopup,createUserWithEmailAndPassword,signInWithEmailAndPassword, GoogleAuthProvider,onAuthStateChanged,sendEmailVerification, updateProfile, GithubAuthProvider,FacebookAuthProvider, signOut } from "firebase/auth";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 initializeAuth();
-
-
 
 const useFirebase = () => {
     const [user, setUser] = useState({})
@@ -99,7 +96,6 @@ const useFirebase = () => {
                 .finally(setIsLoading(false))
                 ;
             }
-console.log(user.displayName,user.photoURL)
     return {
         user, isLoading,error,
         setUser,setIsLoading,setName,setEmail,setPassword,setError,

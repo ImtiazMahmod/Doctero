@@ -1,16 +1,21 @@
+import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faArrowRight, faStethoscope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import useDocter from '../../Hooks/useDocter';
 import Banner from '../../Shared/Banner/Banner';
+import CompanyInfo from '../../Shared/companyinfo/CompanyInfo';
 
 const DoctorDetail = () => {
     const { doctorId } = useParams();
     const [doctors] = useDocter([]);   
    
     const exactMatch = doctors?.filter(department => department.id == doctorId);
+    const style = { borderRadius: '50%', height: '30', width: "30"}
+
+    const iconStyle = "mx-2 fs-1 p-1 text-light  bg-secondary "
     return (
         <div>
             <Banner>
@@ -20,26 +25,36 @@ const DoctorDetail = () => {
             </Banner>
 
             <Container className="my-5">
-            <Row>
-                <Col md={2} lg={4}>
-                <Card className="h-100 rounded">
-                    <Card.Img className="cardimg img-fluid p-4 rounded" variant="top" src={exactMatch[0]?.img} />
+            <Row className="justify-content-center">
+                <Col sm={12} md={2} lg={3}>
+                <Card className="h-100 rounded border-0 shadow py-3">
+                    <Card.Img className="cardimg img-fluid  mx-auto" variant="top" src={exactMatch[0]?.img} />
                     <Card.Body>
                     <Card.Title className="fw-bold text-info">{exactMatch[0]?.name}</Card.Title>
-                    <Card.Text className="text-secondary">
-                    {exactMatch[0]?.designation}
+                    <Card.Text className="fw-bold text-secondary">
+                                    {exactMatch[0]?.designation} <br />
+                                    {
+                            exactMatch[0]?.qualification.map(ql => <p className="text-center fw-normal d-inline-block"> { ql?.split(" ")[0]}, </p>)
+                    }
                     </Card.Text>
-                            
-                    </Card.Body>
+                    <Button variant="info">Appointment Now</Button>
+                            </Card.Body>
+                            <div>
+                            <FontAwesomeIcon style={style} className={iconStyle}  icon={faFacebookF}  />
+                            <FontAwesomeIcon style={style} className={iconStyle} icon={faTwitter}  />
+                            <FontAwesomeIcon style={style} className={iconStyle} icon={faInstagram}  />
+                         </div>
                 </Card>
                 </Col >
-                <Col md={9} lg={7}>
+                <Col  sm={12} md={9} lg={7}>
                     <h2 className="fw-bold text-start">Qualification:</h2>
-                    <div className="mt-4">
+                    <div className=" p-4">
                     {
                             exactMatch[0]?.qualification.map(ql => <p className="text-start"><FontAwesomeIcon className="text-info" icon={ faArrowRight }/> { ql}</p>)
                     }
-                    </div>
+                        </div>
+                        <CompanyInfo></CompanyInfo>
+                       
                 </Col>
 
             </Row>

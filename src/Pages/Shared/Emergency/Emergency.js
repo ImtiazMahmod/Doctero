@@ -2,6 +2,7 @@ import { faHeadphones } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Emergency = () => {
     return (
@@ -15,10 +16,12 @@ const Emergency = () => {
                 </div>
                 </div>
                 <p>In Emergency case, we always beside of you.We are always try to help in any condition.NO PANIC.</p>
+                <Link to='/contact'>
                 <Button variant="info" className="my-4 w-100">Contact US</Button>
+                </Link>
             </div>
             <div>
-                <Button variant="info" className="my-3 w-100">Our company details</Button>
+                <Link to="/about"><Button variant="info" className="my-3 w-100">Our company details</Button></Link>
             </div>
         </div>
     );

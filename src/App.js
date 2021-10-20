@@ -38,9 +38,9 @@ function App() {
                   <Doctors></Doctors>
             </Route>
             {/* dynamic route for doctor */}
-           <Route path="/doctors/:doctorId">
+           <PrivateRoute path="/doctors/:doctorId">
                   <DoctorDetail></DoctorDetail>
-            </Route>
+            </PrivateRoute>
            <Route exact path="/departments">
                   <AllDepartment></AllDepartment>
           </Route>

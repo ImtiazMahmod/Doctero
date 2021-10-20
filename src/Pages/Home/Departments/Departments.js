@@ -12,7 +12,9 @@ const Departments = () => {
     <Col key={dp.id}>
       <Department department={dp}></Department>
     </Col>
+    
   ))}
+          
 </Row>
         </Container>
     );

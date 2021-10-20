@@ -1,4 +1,5 @@
 import React from 'react';
+import CompanyInfo from '../../Shared/companyinfo/CompanyInfo';
 import Departments from '../Departments/Departments';
 import HeaderInfo from '../HeaderInfo/HeaderInfo';
 import HomeBanner from '../HomeBanner/HomeBanner';
@@ -17,6 +18,7 @@ const Home = () => {
                 <h1 className="fw-bold">Department of medical health care</h1>
             </div>
             <Departments></Departments>
+            <CompanyInfo></CompanyInfo>
             <div className="my-5 fw-bold">
                 <p className="text-info">Expert & Specialized Consultant </p>
                 <h1 className="fw-bold">Our Specialized Doctors</h1>

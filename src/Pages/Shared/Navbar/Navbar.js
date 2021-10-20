@@ -10,7 +10,7 @@ const MainNavbar = () => {
 <Container fluid>
        <Navbar.Brand>
               
-             <Link to="/"> <img width="200" className="mx-5" src="https://i.ibb.co/cCw9yY8/logo.png" alt="" /></Link>    </Navbar.Brand>
+             <a href="/"> <img width="200" className="mx-5" src="https://i.ibb.co/cCw9yY8/logo.png" alt="" /></a>    </Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
