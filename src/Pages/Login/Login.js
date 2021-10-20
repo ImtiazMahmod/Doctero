@@ -1,4 +1,4 @@
-import {  faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import {  faFacebookF, faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
@@ -8,7 +8,7 @@ import useAuth from '../Hooks/useAuth';
 
 
 const Login = () => {
-    const {setError,setUser,setIsLoading, googleSignIn,error,login,setEmail,setPassword,githubSignIn } = useAuth()
+    const {setError,setUser,setIsLoading, googleSignIn,error,login,setEmail,setPassword,githubSignIn,facebookSignIn } = useAuth()
     ///user desired destination path
     const location = useLocation();
     const redirectUri = location.state?.from || '/home'
@@ -37,8 +37,21 @@ const Login = () => {
             .catch(error =>
                 setError(error.message)
                 )
-            .finally(setIsLoading(false))
-            ;
+            .finally(setIsLoading(false));
+    }
+
+    ///facebook signin
+    const handleFacebook = () => {
+        facebookSignIn()
+        .then((result) => {
+            setUser(result.user);
+            setError('');
+            history.push(redirectUri);
+          })
+          .catch((error) => {
+            setError(error.message);
+          })
+              .finally(setIsLoading(false));
     }
 const handlePassword = (e) => {
     setPassword(e.target.value)
@@ -82,6 +95,8 @@ const handlePassword = (e) => {
                             <Button onClick={handleGoogle}  className="m-3 w-75" variant="outline-info"> <FontAwesomeIcon icon={ faGoogle } /> Login With Google</Button>
                             <Button onClick={handleGithub} className=" m-3 w-75" variant="outline-info">
                             <FontAwesomeIcon  icon={ faGithub} /> Login With Github</Button>
+                            <Button onClick={handleFacebook} className=" m-3 w-75" variant="outline-info">
+                            <FontAwesomeIcon  icon={ faFacebookF} /> Login With Facebook</Button>
                         </div>
                         <div className="mt-3">
                             <p>Don't have an Account.  <Link to="/register" className="text-info fw-bold">SignUp</Link> </p>

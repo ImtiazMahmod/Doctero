@@ -1,6 +1,7 @@
 import  { useEffect, useState } from 'react';
 import initializeAuth from '../Login/Firebase/firebase.init'
-import { getAuth, signInWithPopup,createUserWithEmailAndPassword,signInWithEmailAndPassword, GoogleAuthProvider,onAuthStateChanged,sendEmailVerification, updateProfile, GithubAuthProvider ,signOut } from "firebase/auth";
+import { getAuth, signInWithPopup,createUserWithEmailAndPassword,signInWithEmailAndPassword, GoogleAuthProvider,onAuthStateChanged,sendEmailVerification, updateProfile, GithubAuthProvider,FacebookAuthProvider, signOut } from "firebase/auth";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 initializeAuth();
 
@@ -14,9 +15,12 @@ const useFirebase = () => {
     const [isLoading,setIsLoading]= useState(true)
     const [error,setError]= useState(true)
     
-    const auth = getAuth();
+  const auth = getAuth();
+
+  ///providers
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
+  const facebookProvider = new FacebookAuthProvider();
     
     ///user state observer 
     useEffect(() => {
@@ -64,7 +68,7 @@ const useFirebase = () => {
             displayName: name,
             email: email,
             password: password,
-            photoURL: "https://example.com/jane-q-user/profile.jpg"
+          photoURL: 'https://i.ibb.co/CQWnXtz/profile-user.png'
           }).then(() => {
             setError('')
           }).catch((error) => {
@@ -79,6 +83,12 @@ const useFirebase = () => {
       
   }
 
+  //signin facebook
+  const facebookSignIn = () => {
+    setIsLoading(true);
+  return  signInWithPopup(auth, facebookProvider)
+  
+  }
 
     ///logout
     const logout = () => {
@@ -89,12 +99,12 @@ const useFirebase = () => {
                 .finally(setIsLoading(false))
                 ;
             }
-
+console.log(user.displayName,user.photoURL)
     return {
         user, isLoading,error,
         setUser,setIsLoading,setName,setEmail,setPassword,setError,
         newUser,
-        login,googleSignIn,githubSignIn,
+        login,googleSignIn,githubSignIn,facebookSignIn,
         logout,
         updateUser,verifyEmail
     }

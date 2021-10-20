@@ -28,7 +28,10 @@ const Register = () => {
             updateUser();
             verifyEmail(result.user)
             setError('')
-            history.push('/home')
+            history.push('/home');
+            ///solution for auto login after registration
+            /// reload window
+            window.location.reload();
         })
       .catch(error=> setError(error.message))
     }

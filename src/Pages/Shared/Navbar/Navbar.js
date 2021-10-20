@@ -7,7 +7,7 @@ const MainNavbar = () => {
   const { user,logout } = useAuth();
     return (
         <Navbar sticky="top" collapseOnSelect expand="lg" bg="light" variant="light">
-  <Container>
+<Container fluid>
        <Navbar.Brand>
               
              <Link to="/"> <img width="200" className="mx-5" src="https://i.ibb.co/cCw9yY8/logo.png" alt="" /></Link>    </Navbar.Brand>
@@ -25,10 +25,18 @@ const MainNavbar = () => {
       
     </Nav>
             <Nav>
+              
+            {/* userName */}
+              {user?.email && 
+                <div className="d-flex mx-auto my-auto">
+                {user?.photoURL ? <img className="rounded-circle" width="40" height="40" src={user?.photoURL} alt="" /> : ""}
+                <h5 className="text-dark mt-auto mx-3">Hi, {user?.displayName?.split(" ")[0]}</h5> 
+              </div>
+              }
+
               {/* user toggle */}
-              {user?.email && <h5 className="text-dark mt-auto mx-3">{user.displayName}</h5> }
               {user?.email ?
-                <Button onClick={logout} variant="info" >LogOut</Button> :
+                <Button onClick={logout} className="my-2 mx-auto " variant="info" >LogOut</Button> :
                 <Nav.Link className="fw-bold" as={Link} to="/login"> Login </Nav.Link>}
      
     </Nav>
