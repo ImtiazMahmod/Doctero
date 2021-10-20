@@ -44,7 +44,7 @@ const Register = () => {
                     <img className="img-fluid h-75" src="https://i.ibb.co/ZS7LqdY/5821152.jpg" alt="" />
                 </Col>
                     <Col md={12} lg={4} className="mt-3">
-                        <h2 className="fw-bold">Register as A Doctor.</h2>
+                        <h2 className="fw-bold">Register</h2>
                         <p>Lets Get you Registered.</p>
                     <form className="d-flex flex-column  ">
                         <input onBlur={handleName} className={inputStyle} type="text" placeholder="Your Name" required/>
@@ -57,7 +57,7 @@ const Register = () => {
                         </form>
                         
                         <div className="mt-3">
-                            <p>Already have an Account.  <Link to="/login" className="text-info fw-bold">Login</Link> </p>
+                            <p>Already have an Account?  <Link to="/login" className="text-info fw-bold">Login</Link> </p>
                             
                         </div>
                 </Col>

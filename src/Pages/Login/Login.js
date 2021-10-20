@@ -80,7 +80,7 @@ const handlePassword = (e) => {
                     <img className="img-fluid h-75" src="https://i.ibb.co/ZS7LqdY/5821152.jpg" alt="" />
                 </Col>
                     <Col md={12} lg={4} className="mt-3">
-                        <h2 className="fw-bold">Welcome Back Doctor !</h2>
+                        <h2 className="fw-bold">Welcome Back !</h2>
                         <p>Lets Get you Logged in</p>
                     <form className="d-flex flex-column  ">
                         <input onBlur={handleEmail} className={inputStyle} type="email" placeholder="Your Email" required/>
@@ -99,7 +99,7 @@ const handlePassword = (e) => {
                             <FontAwesomeIcon  icon={ faFacebookF} /> Login With Facebook</Button>
                         </div>
                         <div className="mt-3">
-                            <p>Don't have an Account.  <Link to="/register" className="text-info fw-bold">SignUp</Link> </p>
+                            <p>Don't have an Account?  <Link to="/register" className="text-info fw-bold">SignUp</Link> </p>
                             
                         </div>
                 </Col>
