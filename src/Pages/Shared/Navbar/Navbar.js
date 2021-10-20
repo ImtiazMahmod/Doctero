@@ -1,3 +1,5 @@
+import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Container,Nav,Button, Navbar } from 'react-bootstrap';
 import {HashLink as Link} from 'react-router-hash-link'
@@ -37,7 +39,7 @@ const MainNavbar = () => {
               {/* user toggle */}
               {user?.email ?
                 <Button onClick={logout} className="my-2 mx-auto " variant="info" >LogOut</Button> :
-                <Nav.Link className="fw-bold" as={Link} to="/login"> Login </Nav.Link>}
+                <Nav.Link className="fw-bold" as={Link} to="/login"><FontAwesomeIcon icon={faUser }/> Login </Nav.Link>}
      
     </Nav>
   </Navbar.Collapse>
