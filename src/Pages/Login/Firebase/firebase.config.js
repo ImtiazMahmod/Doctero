@@ -1,17 +1,15 @@
 const firebaseConfig = {
+  apiKey: "AIzaSyDNV0yCe6RbE5Sks1Fpn1ZVyJIyxdIrfKU",
 
-    apiKey: "AIzaSyCizWiSYiR105rlrYRBPk8zeKezplFAzgY",
-  
-    authDomain: "docterobd.firebaseapp.com",
-  
-    projectId: "docterobd",
-  
-    storageBucket: "docterobd.appspot.com",
-  
-    messagingSenderId: "981779254400",
-  
-    appId: "1:981779254400:web:548f86926a03ef4d17aa65"
-  
-  };
-  
+  authDomain: "doctero-bd.firebaseapp.com",
+
+  projectId: "doctero-bd",
+
+  storageBucket: "doctero-bd.appspot.com",
+
+  messagingSenderId: "1068087964233",
+
+  appId: "1:1068087964233:web:39baa4da3fb042c2068598",
+};
+
 export default firebaseConfig;
